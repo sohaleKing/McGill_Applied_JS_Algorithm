@@ -7,7 +7,11 @@ fizzbuzz = function(a, b)
 {
     let output
     for (let x = a; x <= b; x++) {
-        output = x + ": "
+
+        // Format the number to be 2 digits exactly. (include a 0).
+        let formattedNumber = ("0" + x).slice(-2);
+
+        output = formattedNumber + ": "
         if (x % FIZZ === 0) {
             output += FIZZ_PHRASE
         }
