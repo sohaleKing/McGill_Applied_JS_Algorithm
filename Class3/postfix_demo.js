@@ -55,6 +55,9 @@ function postFixCalc(expression) {
                 return "Can't perform postfix calculation - Format incorrect";
             }
             switch (token) {
+                case '%':
+                    stack.push(lhs % rhs);
+                    break;
                 case '+':
                     stack.push(lhs + rhs);
                     break;
@@ -76,4 +79,4 @@ function postFixCalc(expression) {
     return stack.pop().data;
 }
 
-console.log(postFixCalc("51+1+"))
+console.log(postFixCalc("75%"))
